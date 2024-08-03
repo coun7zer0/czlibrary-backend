@@ -1,4 +1,4 @@
-package cz.library.store.controller.security.infrastructure;
+package cz.library.store.security.infrastructure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
   @Bean
-  public SecurityFilterChain filterChain (HttpSecurity http) throws Exception {
+  public SecurityFilterChain filterChain (HttpSecurity http) throws Exception { 
     http
         .csrf(csrf -> csrf.disable())
         .sessionManagement(
