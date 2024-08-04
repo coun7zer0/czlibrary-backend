@@ -1,4 +1,4 @@
-package cz.library.store.user.domain.model;
+package cz.library.store.user.domain;
 
 public enum Gender {
   MALE,
