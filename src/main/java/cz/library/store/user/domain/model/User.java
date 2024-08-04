@@ -47,16 +47,16 @@ public class User {
     && name.matches("[A-Za-z]+( [A-Za-z]+)?");
   }
 
-  public boolean lastnameIsVaild() {
+  public boolean lastnameIsValid() {
     // Lastname cannot be null, it should contain only letters and optionally one second lastname
     return lastname != null
         && lastname.matches("[A-Za-z]+( [A-Za-z]+)?");
   }
 
   public boolean phoneNumberIsValid() {
-    // Phone number with country code validation
+    // E.164 phone number validation (Min 7 digits, max 15 digits, starting with +)
     return phoneNumber != null
-        && phoneNumber.matches("\\+\\d{1,3}[- .]?\\d{1,14}([-. ]?\\d{1,13})*");
+        && phoneNumber.matches("\\+\\d{6,14}$");
   }
   
 }
