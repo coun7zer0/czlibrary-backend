@@ -1,17 +1,17 @@
-package cz.library.store.user.application.validator;
+package cz.library.store.user.application.validator.unique;
 
 import cz.library.store.user.application.UserDataSourceGateway;
-import cz.library.store.user.application.UserValidator;
+import cz.library.store.user.application.validator.UserValidator;
 import cz.library.store.user.domain.User;
 
-public class EmailExistsValidator extends UserValidator {
+public class EmailNotExistsValidator extends UserValidator {
 
   private UserDataSourceGateway userDataSource;
-
-  public EmailExistsValidator(UserDataSourceGateway userDataSource) {
+  
+  public EmailNotExistsValidator(UserDataSourceGateway userDataSource) {
     this.userDataSource = userDataSource;
   }
-
+  
 	@Override
 	public String validate(User user) {
     if (userDataSource.existsByEmail(user.getEmail())) {

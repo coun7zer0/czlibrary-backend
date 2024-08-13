@@ -1,4 +1,4 @@
-package cz.library.store.user.application;
+package cz.library.store.user.application.validator;
 
 import cz.library.store.user.domain.User;
 

@@ -1,6 +1,6 @@
-package cz.library.store.user.application.validator;
+package cz.library.store.user.application.validator.unique;
 
-import cz.library.store.user.application.UserValidator;
+import cz.library.store.user.application.validator.UserValidator;
 import cz.library.store.user.domain.User;
 
 public class UserFormatValidator extends UserValidator{

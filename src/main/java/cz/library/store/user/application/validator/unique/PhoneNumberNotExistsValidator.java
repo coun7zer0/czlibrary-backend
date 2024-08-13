@@ -1,14 +1,14 @@
-package cz.library.store.user.application.validator;
+package cz.library.store.user.application.validator.unique;
 
 import cz.library.store.user.application.UserDataSourceGateway;
-import cz.library.store.user.application.UserValidator;
+import cz.library.store.user.application.validator.UserValidator;
 import cz.library.store.user.domain.User;
 
-public class PhoneNumberExistsValidator extends UserValidator {
-
+public class PhoneNumberNotExistsValidator extends UserValidator {
+  
   private UserDataSourceGateway userDataSource;
 
-  public PhoneNumberExistsValidator(UserDataSourceGateway userDataSource) {
+  public PhoneNumberNotExistsValidator(UserDataSourceGateway userDataSource) {
     this.userDataSource = userDataSource;
   }
   
