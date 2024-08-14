@@ -1,4 +1,4 @@
-package cz.library.store.user.application.usecases.create;
+package cz.library.store.user.application.usecase.create;
 
 import cz.library.store.user.application.UserDataSourceGateway;
 import cz.library.store.user.application.validator.UserValidator;
@@ -11,7 +11,7 @@ import cz.library.store.user.domain.User;
 
 public class UserCreateValidation {
 
-  private UserDataSourceGateway userDataSource;
+  private final UserDataSourceGateway userDataSource;
 
   public UserCreateValidation(UserDataSourceGateway userDataSource) {
     this.userDataSource = userDataSource;
