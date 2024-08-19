@@ -8,17 +8,17 @@ import java.util.List;
 
 class StringUtilTest {
 
-    @Test
+  @Test
     void givenCamelCaseString_whenConvertToWords_thenReturnsSpaceSeparatedWords() {
-        // Given
-        String camelCase = "camelCaseToWords";
+    // Given
+    String camelCase = "camelCaseToWords";
 
-        // When
-        String result = StringUtil.camelCaseToWords(camelCase);
+    // When
+    String result = StringUtil.camelCaseToWords(camelCase);
 
-        // Then
-        assertEquals("camel case to words", result);
-    }
+    // Then
+    assertEquals("camel case to words", result);
+  }
 
   @Test
 
@@ -34,39 +34,39 @@ class StringUtilTest {
 
   
 
-    @Test
+  @Test
     void givenSingleElementList_whenConcatListOr_thenReturnsSingleElement() {
-        // Given
-        List<String> singleElementList = Arrays.asList("apple");
+    // Given
+    List<String> singleElementList = Arrays.asList("apple");
 
-        // When
-        String result = StringUtil.concatListOr(singleElementList);
+    // When
+    String result = StringUtil.concatListOr(singleElementList);
 
-        // Then
-        assertEquals("apple", result);
-    }
+    // Then
+    assertEquals("apple", result);
+  }
 
-    @Test
+  @Test
     void givenMultipleElementsList_whenConcatListOr_thenReturnsCommaSeparatedWithOr() {
-        // Given
-        List<String> multipleElementList = Arrays.asList("apple", "banana", "cherry");
+    // Given
+    List<String> multipleElementList = Arrays.asList("apple", "banana", "cherry");
 
-        // When
-        String result = StringUtil.concatListOr(multipleElementList);
+    // When
+    String result = StringUtil.concatListOr(multipleElementList);
 
-        // Then
-        assertEquals("apple, banana or cherry", result);
-    }
+    // Then
+    assertEquals("apple, banana or cherry", result);
+  }
 
-    @Test
+  @Test
     void givenTwoElementsList_whenConcatListOr_thenReturnsElementsSeparatedWithOr() {
-        // Given
-        List<String> twoElementList = Arrays.asList("apple", "banana");
+    // Given
+    List<String> twoElementList = Arrays.asList("apple", "banana");
 
-        // When
-        String result = StringUtil.concatListOr(twoElementList);
+    // When
+    String result = StringUtil.concatListOr(twoElementList);
 
-        // Then
-        assertEquals("apple or banana", result);
-    }
+    // Then
+    assertEquals("apple or banana", result);
+  }
 }
