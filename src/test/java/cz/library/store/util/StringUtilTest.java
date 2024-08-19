@@ -20,6 +20,20 @@ class StringUtilTest {
         assertEquals("camel case to words", result);
     }
 
+  @Test
+
+  void givenCamelCaseWithNumbers_whenConvertToWords_thenReturnsSpaceSpecifiedWords() {
+    // Given
+    String camelCase = "camelCaseWith2Numbers34";
+
+    // when
+    String result = StringUtil.camelCaseToWords(camelCase);
+
+    assertEquals("camel case with 2 numbers 34", result);
+  }
+
+  
+
     @Test
     void givenSingleElementList_whenConcatListOr_thenReturnsSingleElement() {
         // Given

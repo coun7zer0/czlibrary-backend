@@ -8,6 +8,8 @@ public final class StringUtil {
   public static String camelCaseToWords(String str) {
     return str
         .replaceAll("([a-z])([A-Z])", "$1 $2")
+        .replaceAll("([a-zA-Z])([0-9])", "$1 $2")
+        .replaceAll("([0-9])([a-zA-Z])", "$1 $2")
         .toLowerCase();
   }
 
