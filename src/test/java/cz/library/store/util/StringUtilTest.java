@@ -21,18 +21,28 @@ class StringUtilTest {
   }
 
   @Test
-
   void givenCamelCaseWithNumbers_whenConvertToWords_thenReturnsSpaceSpecifiedWords() {
     // Given
     String camelCase = "camelCaseWith2Numbers34";
 
-    // when
+    // When
     String result = StringUtil.camelCaseToWords(camelCase);
 
+    // Then
     assertEquals("camel case with 2 numbers 34", result);
   }
 
-  
+  @Test
+    void givenCapitalizedCamelCase_whenConvertToWords_thenReturnsSpaceSeparatedWordsInLowerCase() {
+    // Given
+    String camelCase = "CapitalizedCamelCase";
+
+    // When
+    String result = StringUtil.camelCaseToWords(camelCase);
+
+    // Then
+    assertEquals("capitalized camel case", result);
+  }
 
   @Test
     void givenSingleElementList_whenConcatListOr_thenReturnsSingleElement() {
