@@ -26,7 +26,7 @@ public class User {
         + "@(?:[A-Za-z0-9]"
         + "(?:[-A-Za-z0-9]*[A-Za-z0-9])?\\.)+"
         + "[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?";
-    
+
     return email != null
         && email.matches(emailRegex);
   }
@@ -59,5 +59,5 @@ public class User {
     return phoneNumber != null
         && phoneNumber.matches("\\+\\d{6,14}$");
   }
-  
+
 }
