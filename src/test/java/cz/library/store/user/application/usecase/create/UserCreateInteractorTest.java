@@ -36,6 +36,30 @@ public class UserCreateInteractorTest {
   }
 
   @Test
+  void givenValidUserData_whenCreateUser_thenSaveItAndPrepareSuccessView() {
+    // given
+    User user = new User(null, "example@mail.com", "validPassword123!", null, null, null, null);
+    UserRequestData userRequestData = new UserRequestData(
+        user.getEmail(),
+        user.getPassword(),
+        user.getName(),
+        user.getLastname(),
+        user.getPhoneNumber(),
+        user.getGender());
+
+    when(userValidation.validate(any(User.class))).thenReturn(null);
+    when(userDataSource.save(any(User.class))).thenReturn(user);
+
+    // when
+    interactor.create(userRequestData);
+
+    // then
+    verify(userValidation, times(1)).validate(any(User.class));
+    verify(userDataSource, times(1)).save(any(User.class));
+    verify(userPreseter, times(1)).prepareSuccessView(any(UserResponseData.class));
+  }
+
+  @Test
   void givenNullUserData_whenCreateUser_thenPrepareFailView() {
     // given
     UserRequestData userRequestData = null;
@@ -50,30 +74,6 @@ public class UserCreateInteractorTest {
   }
 
   @Test
-  void givenValidUserData_whenCreateUser_thenSaveItAndPrepareSuccessView() {
-    // given
-    User user = new User(null, "example@mail.com", "validPassword123!", null, null, null, null);
-    UserRequestData userRequestData = new UserRequestData(
-        user.getEmail(),
-        user.getPassword(),
-        user.getName(),
-        user.getLastname(),
-        user.getPhoneNumber(),
-        user.getGender());
-    
-    when(userValidation.validate(any(User.class))).thenReturn(null);
-    when(userDataSource.save(any(User.class))).thenReturn(user);
-
-    // when
-    interactor.create(userRequestData);
-
-    // then
-    verify(userValidation, times(1)).validate(any(User.class));
-    verify(userDataSource, times(1)).save(any(User.class));
-    verify(userPreseter, times(1)).prepareSuccessView(any(UserResponseData.class));
-  }
-
-  @Test
   void givenInvalidUserDate_whenCreateUser_thenPrepareFailView() {
     // given
     User user = new User(null, "example@mail.com", null, null, null, null, null);
@@ -85,10 +85,10 @@ public class UserCreateInteractorTest {
         user.getPhoneNumber(),
         user.getGender()
         );
-    
+
     String validationMessage = "Invalid field password. The password cannot be null.";
     when(userValidation.validate(any(User.class))).thenReturn(validationMessage);
-    
+
     // when
     interactor.create(userRequestData);
 

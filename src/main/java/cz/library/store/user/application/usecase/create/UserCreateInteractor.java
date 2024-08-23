@@ -21,12 +21,12 @@ public class UserCreateInteractor implements UserCreateBoundary {
     this.userDataSource = userDataSource;
   }
 
-	@Override
-	public UserResponseData create(final UserRequestData data) {
+  @Override
+  public UserResponseData create(final UserRequestData data) {
     if (data == null) {
-    	return userPresenter.prepareFailView("Missing data");
+      return userPresenter.prepareFailView("Missing data");
     }
-    
+
     User user = data.toUser();
     String message = userValidation.validate(user);
     if ( message != null) {
@@ -34,8 +34,8 @@ public class UserCreateInteractor implements UserCreateBoundary {
     }
 
     User savedUser = userDataSource.save(user);
-    
+
     return userPresenter.prepareSuccessView(new UserResponseData(savedUser));
-	}
-  
+  }
+
 }
