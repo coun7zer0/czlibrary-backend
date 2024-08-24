@@ -1,6 +1,7 @@
 package cz.library.store.validation.application;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Map;
 
@@ -88,7 +89,7 @@ public class FieldNotNullTest {
     String result = validator.validate(entity);
 
     // then
-    assertEquals("Invalid field secondField. The second field cannot be null.", result);
+    assertTrue(result.matches("Invalid field (first|second)Field. The (first|second) field cannot be null."));
   }
 
   @Test

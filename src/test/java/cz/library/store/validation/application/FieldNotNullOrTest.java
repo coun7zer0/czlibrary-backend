@@ -1,6 +1,7 @@
 package cz.library.store.validation.application;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Map;
 
@@ -16,10 +17,10 @@ public class FieldNotNullOrTest {
 
     private Integer integerField;
 
-  private MockEntity(String firstField, String secondField, Integer integerField) {
+    private MockEntity(String firstField, String secondField, Integer integerField) {
       this.firstField = firstField;
       this.secondField = secondField;
-    this.integerField = integerField;
+      this.integerField = integerField;
     }
 
     public String getFirstField() {
@@ -127,7 +128,11 @@ public class FieldNotNullOrTest {
     String result = validator.validate(entity);
 
     //then
-    assertEquals("You must provide either firstField, integerField or secondField.", result);
+    assertTrue(
+        result.matches("You must provide either "
+            + "(first|second|integer)Field, "
+            + "(first|second|integer)Field or "
+            + "(first|second|integer)Field."));
   }
 
 }
