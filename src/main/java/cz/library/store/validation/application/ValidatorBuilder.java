@@ -10,7 +10,7 @@ import cz.library.store.validation.domain.Validator;
 
 public abstract class ValidatorBuilder<T, U extends ValidatorBuilder<T, U>> {
 
-  private List<Validator<T>> validatorChain;
+  protected List<Validator<T>> validatorChain;
 
   @SuppressWarnings("unchecked")
   protected U self() {
