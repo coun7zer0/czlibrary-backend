@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import cz.library.store.user.application.UserDataSourceGateway;
 import cz.library.store.user.application.dto.UserRequestData;
 import cz.library.store.user.application.dto.UserResponseData;
 import cz.library.store.user.application.presenter.UserPresenter;
@@ -25,7 +24,7 @@ public class UserCreateInteractorTest {
   private UserCreateValidation userValidation;
 
   @Mock
-  private UserDataSourceGateway userDataSource;
+  private UserCreateDataSourceGateway userDataSource;
 
   private UserCreateInteractor interactor;
 

@@ -1,6 +1,5 @@
 package cz.library.store.user.application.usecase.create;
 
-import cz.library.store.user.application.UserDataSourceGateway;
 import cz.library.store.user.application.dto.UserRequestData;
 import cz.library.store.user.application.dto.UserResponseData;
 import cz.library.store.user.application.presenter.UserPresenter;
@@ -10,12 +9,12 @@ public class UserCreateInteractor implements UserCreateBoundary {
 
   private final UserPresenter userPresenter;
   private final UserCreateValidation userValidation;
-  private final UserDataSourceGateway userDataSource;
+  private final UserCreateDataSourceGateway userDataSource;
 
   public UserCreateInteractor(
       UserPresenter userPresenter,
       UserCreateValidation userValidation,
-      UserDataSourceGateway userDataSource) {
+      UserCreateDataSourceGateway userDataSource) {
     this.userPresenter = userPresenter;
     this.userValidation = userValidation;
     this.userDataSource = userDataSource;

@@ -9,13 +9,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import cz.library.store.user.application.UserDataSourceGateway;
 import cz.library.store.user.domain.User;
 
 public class UserCreateValidationTest {
 
   @Mock
-  private UserDataSourceGateway userDataSource;
+  private UserCreateDataSourceGateway userDataSource;
 
   private UserCreateValidation validation;
 
