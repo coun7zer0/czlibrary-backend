@@ -1,7 +1,5 @@
 package cz.library.store.user.infrastructure.persistence;
 
-import org.hibernate.annotations.NaturalId;
-
 import cz.library.store.user.domain.Gender;
 import cz.library.store.user.domain.User;
 import jakarta.persistence.Column;
