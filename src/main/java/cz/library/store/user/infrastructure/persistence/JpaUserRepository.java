@@ -1,4 +1,4 @@
-package cz.library.store.user.infrastructure;
+package cz.library.store.user.infrastructure.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package cz.library.store.user.infrastructure;
+package cz.library.store.user.infrastructure.persistence;
 
 import org.hibernate.annotations.NaturalId;
 
@@ -30,7 +30,6 @@ public class UserDataMapper {
   private Long id;
 
   @Column(unique = true)
-  @NaturalId
   private String email;
 
   private String password;
@@ -39,8 +38,7 @@ public class UserDataMapper {
 
   private String lastname;
 
-  @Column(unique = true)
-  @NaturalId
+  @Column(unique = true, length = 15)
   private String phoneNumber;
 
   @Enumerated(value = EnumType.STRING)
