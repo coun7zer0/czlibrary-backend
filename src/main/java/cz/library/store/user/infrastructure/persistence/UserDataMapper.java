@@ -3,6 +3,7 @@ package cz.library.store.user.infrastructure;
 import org.hibernate.annotations.NaturalId;
 
 import cz.library.store.user.domain.Gender;
+import cz.library.store.user.domain.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -44,4 +45,18 @@ public class UserDataMapper {
 
   @Enumerated(value = EnumType.STRING)
   private Gender gender;
+
+  public UserDataMapper(User user) {
+    this.id = user.getId();
+    this.email = user.getEmail();
+    this.password = user.getPassword();
+    this.name = user.getName();
+    this.lastname = user.getLastname();
+    this.phoneNumber = user.getPhoneNumber();
+    this.gender = user.getGender();
+  }
+
+  public User toUser() {
+    return new User(id, email, password, name, lastname, phoneNumber, gender);
+  }
 }
