@@ -22,7 +22,7 @@ public class SecurityConfig {
             authorize -> authorize
                 .requestMatchers("/login").permitAll()
                 .anyRequest().authenticated());
-    
+
     return http.build();
   }
 }

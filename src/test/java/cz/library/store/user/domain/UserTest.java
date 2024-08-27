@@ -11,7 +11,7 @@ public class UserTest {
   public void givenValidEmail_whenEmailIsValid_thenIsTrue() {
     String emailContent = "example@example.com";
     User user = new User();
-    
+
     user.setEmail(emailContent);
 
     assertThat(user.getEmail()).isEqualTo(emailContent);
@@ -22,9 +22,9 @@ public class UserTest {
   public void givenNullEmail_whenEmailIsInvalid_thenIsFalse() {
     String emailContent = null;
     User user = new User();
-    
+
     user.setEmail(emailContent);
-    
+
     assertThat(user.getEmail()).isEqualTo(emailContent);
     assertThat(user.emailIsValid()).isFalse();
   }
@@ -33,9 +33,9 @@ public class UserTest {
   public void givenBlankEmail_whenEmailIsInvalid_thenIsFalse() {
     String emailContent = "";
     User user = new User();
-    
+
     user.setEmail(emailContent);
-    
+
     assertThat(user.getEmail()).isEqualTo(emailContent);
     assertThat(user.emailIsValid()).isFalse();
   }
@@ -44,7 +44,7 @@ public class UserTest {
   public void givenEmailWithMissingAtSymbol_whenEmailIsInvalid_thenIsFalse() {
     String emailContent = "example.com";
     User user = new User();
-    
+
     user.setEmail(emailContent);
 
     assertThat(user.getEmail()).isEqualTo(emailContent);
@@ -55,7 +55,7 @@ public class UserTest {
   public void givenEmailWithMissingLocalPart_whenEmailIsInvalid_thenIsFalse() {
     String emailContent = "@example.com";
     User user = new User();
-    
+
     user.setEmail("@example.com");
 
     assertThat(user.getEmail()).contains(emailContent);
@@ -66,19 +66,19 @@ public class UserTest {
   public void givenEmailWithInvalidDomain_whenEmailIsInvalid_thenIsFalse() {
     String emailContent = "example@com";
     User user = new User();
-    
+
     user.setEmail(emailContent);
 
     assertThat(user.getEmail()).isEqualTo(emailContent);
     assertThat(user.emailIsValid()).isFalse();
   }
-  
-  // Test for password validation    
+
+  // Test for password validation
   @Test
   public void givenValidPassword_whenPasswordIsValid_thenIsTrue() {
     String passwordContent = "Password123!";
     User user = new User();
-    
+
     user.setPassword(passwordContent);
 
     assertThat(user.getPassword()).isEqualTo(passwordContent);
@@ -91,7 +91,7 @@ public class UserTest {
     User user = new User();
 
     user.setPassword(passwordContent);
-    
+
     assertThat(user.getPassword()).isEqualTo(null);
     assertThat(user.passwordIsValid()).isFalse();
   }
@@ -100,62 +100,62 @@ public class UserTest {
   public void givenBlankPassword_whenPasswordIsInvalid_thenIsFalse() {
     String passwordContent = "";
     User user = new User();
-    
+
     user.setPassword(passwordContent);
-    
+
     assertThat(user.getPassword()).isEqualTo("");
     assertThat(user.passwordIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenShortPassword_whenPasswordIsInvalid_thenIsFalse() {
     String passwordContent = "Pd123!";
     User user = new User();
-      
+
     user.setPassword(passwordContent);
 
     assertThat(user.getPassword()).isEqualTo(passwordContent);
     assertThat(user.passwordIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenPasswordWithNoUppercaseCharacter_whenPasswordIsInvalid_thenIsFalse() {
     String passwordContent = "nouppercase1!";
     User user = new User();
-    
+
     user.setPassword(passwordContent);
 
     assertThat(user.getPassword()).isEqualTo(passwordContent);
     assertThat(user.passwordIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenPasswordWithNoLowercaseCharacter_whenPasswordIsInvalid_thenIsFalse() {
     String passwordContent = "NOLOWERCASE1!";
     User user = new User();
-      
+
     user.setPassword(passwordContent);
 
     assertThat(user.getPassword()).isEqualTo(passwordContent);
     assertThat(user.passwordIsValid()).isFalse();
   }
-    
+
   @Test
   public void givenPasswordWithNoSpecialCharacter_whenPasswordIsInvalid_thenIsFalse() {
     String passwordContent = "NoSpecialChar1";
     User user = new User();
-      
+
     user.setPassword(passwordContent);
 
     assertThat(user.getPassword()).isEqualTo(passwordContent);
     assertThat(user.passwordIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenPasswordWithNoNumber_whenPasswordIsInvalid_thenIsFalse() {
     String passwordContent = "NoSpecialNumber!";
     User user = new User();
-      
+
     user.setPassword(passwordContent);
 
     assertThat(user.getPassword()).isEqualTo(passwordContent);
@@ -167,84 +167,84 @@ public class UserTest {
   public void givenUniqueName_whenNameIsValid_thenIsTrue() {
     String nameContent = "John";
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
     assertThat(user.nameIsValid()).isTrue();
   }
-  
+
   @Test
   public void givenTwoNames_whenNameIsValid_thenIsTrue() {
     String nameContent = "John Doe";
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
     assertThat(user.nameIsValid()).isTrue();
   }
-  
+
   @Test
   public void givenNullName_whenNameIsInvalid_thenIsFalse() {
     String nameContent = null;
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
     assertThat(user.nameIsValid()).isFalse();
   }
-    
+
   @Test
   public void givenBlakName_whenNameIsInvalid_thenIsFalse() {
     String nameContent = "";
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
     assertThat(user.nameIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenNameWithLeadingSpace_whenNameIsInvalid_thenIsFalse() {
     String nameContent = " John";
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
     assertThat(user.nameIsValid()).isFalse();
   }
-    
+
   @Test
   public void givenNameWithTrailingSpace_whenNameIsInvalid_thenIsFalse() {
     String nameContent = "John ";
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
     assertThat(user.nameIsValid()).isFalse();
   }
-    
+
   @Test
   public void givenNameWithMultipleSpaces_whenNameIsInvalid_thenIsFalse() {
     String nameContent = "John  Doe";
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
     assertThat(user.nameIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenNameWithNonAlphanumericCharacters_whenNameIsInvalid_thenIsFalse() {
     String nameContent = "John1";
     User user = new User();
-      
+
     user.setName(nameContent);
 
     assertThat(user.getName()).isEqualTo(nameContent);
@@ -263,84 +263,84 @@ public class UserTest {
   public void givenUniqueLastname_whenLastnameIsValid_thenIsTrue() {
     String lastnameContent = "John";
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
     assertThat(user.lastnameIsValid()).isTrue();
   }
-  
+
   @Test
   public void givenTwoLastnames_whenLastnameIsValid_thenIsTrue() {
     String lastnameContent = "John Doe";
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
     assertThat(user.lastnameIsValid()).isTrue();
   }
-  
+
   @Test
   public void givenNullLastname_whenLastnameIsInvalid_thenIsFalse() {
     String lastnameContent = null;
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
     assertThat(user.lastnameIsValid()).isFalse();
   }
-    
+
   @Test
   public void givenBlakLastname_whenLastnameIsInvalid_thenIsFalse() {
     String lastnameContent = "";
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
     assertThat(user.lastnameIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenLastnameWithLeadingSpace_whenLastnameIsInvalid_thenIsFalse() {
     String lastnameContent = " John";
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
     assertThat(user.lastnameIsValid()).isFalse();
   }
-    
+
   @Test
   public void givenLastnameWithTrailingSpace_whenLastnameIsInvalid_thenIsFalse() {
     String lastnameContent = "John ";
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
     assertThat(user.lastnameIsValid()).isFalse();
   }
-    
+
   @Test
   public void givenLastnameWithMultipleSpaces_whenLastnameIsInvalid_thenIsFalse() {
     String lastnameContent = "John  Doe";
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
     assertThat(user.lastnameIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenLastnameWithNonAlphanumericCharacters_whenLastnameIsInvalid_thenIsFalse() {
     String lastnameContent = "John1";
     User user = new User();
-      
+
     user.setLastname(lastnameContent);
 
     assertThat(user.getLastname()).isEqualTo(lastnameContent);
@@ -398,7 +398,7 @@ public class UserTest {
     assertThat(user.getPhoneNumber()).isEqualTo(phoneNumberContent);
     assertThat(user.phoneNumberIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenPhoneNumberWithDashes_whenPhoneNumberIsInvalid_thenIsFalse() {
     String phoneNumberContent = "+75-319-024-68";
@@ -409,7 +409,7 @@ public class UserTest {
     assertThat(user.getPhoneNumber()).isEqualTo(phoneNumberContent);
     assertThat(user.phoneNumberIsValid()).isFalse();
   }
-  
+
   @Test
   public void givenPhoneNumberWithDots_whenPhoneNumberIsInvalid_thenIsFalse() {
     String phoneNumberContent = "+75.319.024.68";
