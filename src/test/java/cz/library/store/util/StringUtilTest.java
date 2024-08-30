@@ -9,7 +9,7 @@ import java.util.List;
 class StringUtilTest {
 
   @Test
-    void givenCamelCaseString_whenConvertToWords_thenReturnsSpaceSeparatedWords() {
+  void givenCamelCaseString_whenConvertToWords_thenReturnsSpaceSeparatedWords() {
     // Given
     String camelCase = "camelCaseToWords";
 
@@ -33,7 +33,7 @@ class StringUtilTest {
   }
 
   @Test
-    void givenCapitalizedCamelCase_whenConvertToWords_thenReturnsSpaceSeparatedWordsInLowerCase() {
+  void givenCapitalizedCamelCase_whenConvertToWords_thenReturnsSpaceSeparatedWordsInLowerCase() {
     // Given
     String camelCase = "CapitalizedCamelCase";
 
@@ -45,7 +45,7 @@ class StringUtilTest {
   }
 
   @Test
-    void givenSingleElementList_whenConcatListOr_thenReturnsSingleElement() {
+  void givenSingleElementList_whenConcatListOr_thenReturnsSingleElement() {
     // Given
     List<String> singleElementList = Arrays.asList("apple");
 
@@ -57,7 +57,7 @@ class StringUtilTest {
   }
 
   @Test
-    void givenMultipleElementsList_whenConcatListOr_thenReturnsCommaSeparatedWithOr() {
+  void givenMultipleElementsList_whenConcatListOr_thenReturnsCommaSeparatedWithOr() {
     // Given
     List<String> multipleElementList = Arrays.asList("apple", "banana", "cherry");
 
@@ -69,7 +69,7 @@ class StringUtilTest {
   }
 
   @Test
-    void givenTwoElementsList_whenConcatListOr_thenReturnsElementsSeparatedWithOr() {
+  void givenTwoElementsList_whenConcatListOr_thenReturnsElementsSeparatedWithOr() {
     // Given
     List<String> twoElementList = Arrays.asList("apple", "banana");
 
@@ -79,4 +79,5 @@ class StringUtilTest {
     // Then
     assertEquals("apple or banana", result);
   }
+
 }
