@@ -3,6 +3,7 @@ package cz.library.store.util;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -78,6 +79,66 @@ class StringUtilTest {
 
     // Then
     assertEquals("apple or banana", result);
+  }
+
+  @Test
+  void givenEmptyList_whenConcatListOr_thenReturnsEmptyString() {
+    // Given
+    List<String> emptyList = new ArrayList<>();
+
+    // When
+    String result = StringUtil.concatListOr(emptyList);
+
+    // Then
+    assertEquals("", result);
+  }
+
+  @Test
+  void givenLowercaseString_whenCapitalizeWords_thenReturnsCapitalizedString() {
+    // Given
+    String lowercaseString = "apple banana cherry";
+
+    // When
+    String result = StringUtil.capitalizeWords(lowercaseString);
+
+    // Then
+    assertEquals("Apple Banana Cherry", result);
+  }
+
+  @Test
+  void givenUppercaseString_whenCapitalizeWords_thenReturnsCapitalizedString() {
+    // Given
+    String uppercaseString = "APPLE BANANA CHERRY";
+
+    // When
+    String result = StringUtil.capitalizeWords(uppercaseString);
+
+    // Then
+    assertEquals("Apple Banana Cherry", result);
+  }
+
+  @Test
+  void givenMixedCaseString_whenCapitalizeWords_thenReturnsCapitalizedString() {
+    // Given
+    String mixedCaseString = "aPpLe BaNaNa ChErRy";
+
+    // When
+    String result = StringUtil.capitalizeWords(mixedCaseString);
+
+    // Then
+    assertEquals("Apple Banana Cherry", result);
+  }
+
+  @Test
+  void givenEmptyString_whenCapitalizeWords_thenReturnsEmptyString() {
+    // Given
+    String emptyString = "";
+
+    // When
+    String result = StringUtil.capitalizeWords(emptyString);
+
+    // Then
+    assertEquals("", result);
   }
 
 }
