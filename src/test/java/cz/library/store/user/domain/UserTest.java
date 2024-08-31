@@ -258,6 +258,94 @@ public class UserTest {
     assertThat(user.nameIsValid()).isFalse();
   }
 
+  @Test
+  public void givenOneCapitalizedName_whenNameIsValid_thenIsTrue() {
+    String nameContent = "Jhon";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isTrue();
+  }
+
+  @Test
+  public void givenTwoCapitalizedNames_whenNameIsValid_thenIsTrue() {
+    String nameContent = "Jhon Doe";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isTrue();
+  }
+
+  @Test
+  public void givenOneLowercaseName_whenNameIsInvalid_thenIsFalse() {
+    String nameContent = "jhon";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenTwoLowercaseNames_whenNameIsInvalid_thenIsFalse() {
+    String nameContent = "jhon doe";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenOneUppercaseName_whenNameIsInvalid_thenIsFalse() {
+    String nameContent = "JHON";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenTwoUppercaseNames_whenNameIsInvalid_thenIsFalse() {
+    String nameContent = "JHON DOE";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenOneMixedCaseName_whenNameIsInvalid_thenIsFalse() {
+    String nameContent = "JhOn";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenTwoMixedCaseNames_whenNameIsInvalid_thenIsFalse() {
+    String nameContent = "JhOn DoE";
+    User user = new User();
+
+    user.setName(nameContent);
+
+    assertThat(user.getName()).isEqualTo(nameContent);
+    assertThat(user.nameIsValid()).isFalse();
+  }
+
   // Test for lastname validation
   @Test
   public void givenUniqueLastname_whenLastnameIsValid_thenIsTrue() {
@@ -321,7 +409,7 @@ public class UserTest {
 
     user.setLastname(lastnameContent);
 
-    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.getLastname()).isEqualTo(lastnameContent + "");
     assertThat(user.lastnameIsValid()).isFalse();
   }
 
@@ -347,6 +435,94 @@ public class UserTest {
     assertThat(user.lastnameIsValid()).isFalse();
 
     lastnameContent = "Jhon!";
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenOneCapitalizedLastname_whenLastnameIsValid_thenIsTrue() {
+    String lastnameContent = "Jhon";
+    User user = new User();
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isTrue();
+  }
+
+  @Test
+  public void givenTwoCapitalizedLastnames_whenLastnameIsValid_thenIsTrue() {
+    String lastnameContent = "Jhon Doe";
+    User user = new User();
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isTrue();
+  }
+
+  @Test
+  public void givenOneLowercaseLastname_whenLastnameIsInvalid_thenIsFalse() {
+    String lastnameContent = "jhon";
+    User user = new User();
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenTwoLowercaseLastnames_whenLastnameIsInvalid_thenIsFalse() {
+    String lastnameContent = "jhon doe";
+    User user = new User();
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenOneUppercaseLastname_whenLastnameIsInvalid_thenIsFalse() {
+    String lastnameContent = "JHON";
+    User user = new User();
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenTwoUppercaseLastnames_whenLastnameIsInvalid_thenIsFalse() {
+    String lastnameContent = "JHON DOE";
+    User user = new User();
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenOneMixedCaseLastname_whenLastnameIsInvalid_thenIsFalse() {
+    String lastnameContent = "JhOn";
+    User user = new User();
+
+    user.setLastname(lastnameContent);
+
+    assertThat(user.getLastname()).isEqualTo(lastnameContent);
+    assertThat(user.lastnameIsValid()).isFalse();
+  }
+
+  @Test
+  public void givenTwoMixedCaseLastnames_whenLastnameIsInvalid_thenIsFalse() {
+    String lastnameContent = "JhOn DoE";
+    User user = new User();
 
     user.setLastname(lastnameContent);
 

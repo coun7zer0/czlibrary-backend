@@ -43,15 +43,15 @@ public class User {
   }
 
   public boolean nameIsValid() {
-    // Name cannot be null, it should contain only letters and optionally one second name
+    // Name cannot be null, it should be capitalized, contain only letters and optionally one second name
     return name != null
-    && name.matches("[A-Za-z]+( [A-Za-z]+)?");
+    && name.matches("[A-Z][a-z]+( [A-Z][a-z]+)?");
   }
 
   public boolean lastnameIsValid() {
-    // Lastname cannot be null, it should contain only letters and optionally one second lastname
+    // Lastname cannot be null, it should be capitalized, contain only letters and optionally one second lastname
     return lastname != null
-        && lastname.matches("[A-Za-z]+( [A-Za-z]+)?");
+        && lastname.matches("[A-Z][a-z]+( [A-Z][a-z]+)?");
   }
 
   public boolean phoneNumberIsValid() {
