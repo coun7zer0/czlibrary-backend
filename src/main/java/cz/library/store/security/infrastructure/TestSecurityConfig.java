@@ -10,20 +10,16 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
 @Configuration
-@Profile("!test")
-public class SecurityConfig {
+@Profile("test")
+public class TestSecurityConfig {
 
   @Bean
-  public SecurityFilterChain filterChain (HttpSecurity http) throws Exception {
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
         .csrf(csrf -> csrf.disable())
-        .sessionManagement(
-            session -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-        .authorizeHttpRequests(
-            authorize -> authorize
-                .requestMatchers("/login").permitAll()
-                .anyRequest().denyAll());
+        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .authorizeHttpRequests(authorize -> authorize
+            .anyRequest().permitAll());
 
     return http.build();
   }
