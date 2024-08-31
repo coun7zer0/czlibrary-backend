@@ -69,7 +69,7 @@ public class UserFormatTest {
     String result = validator.validate(user);
 
     // then
-    assertEquals("Invalid field name. The name should contain only letters "
+    assertEquals("Invalid field name. The name must be capitalized, contain only letters "
         + "and optionally one second name.", result);
   }
 
@@ -82,7 +82,7 @@ public class UserFormatTest {
     String result = validator.validate(user);
 
     // then
-    assertEquals("Invalid field lastname. The lastname should contain only "
+    assertEquals("Invalid field lastname. The lastname must be capitalized, contain only "
         +"letters and optionally one second lastname.", result);
   }
 

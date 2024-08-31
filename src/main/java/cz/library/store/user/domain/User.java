@@ -43,13 +43,13 @@ public class User {
   }
 
   public boolean nameIsValid() {
-    // Name cannot be null, it should be capitalized, contain only letters and optionally one second name
+    // Name cannot be null, must be capitalized, contain only letters, and may optionally include a second name
     return name != null
     && name.matches("[A-Z][a-z]+( [A-Z][a-z]+)?");
   }
 
   public boolean lastnameIsValid() {
-    // Lastname cannot be null, it should be capitalized, contain only letters and optionally one second lastname
+    // Lastname cannot be null, must be capitalized, contain only letters and may optionally include a second lastname
     return lastname != null
         && lastname.matches("[A-Z][a-z]+( [A-Z][a-z]+)?");
   }

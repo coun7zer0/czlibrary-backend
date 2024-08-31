@@ -15,11 +15,11 @@ public class UserFormat extends Validator<User>{
           + "1 digit, one uppercase letter, one lowercase letter and one special character.";
     }
     if (user.getName() != null && !user.nameIsValid()) {
-      return "Invalid field name. The name should contain only letters "
+      return "Invalid field name. The name must be capitalized, contain only letters "
           + "and optionally one second name.";
     }
     if (user.getLastname() != null && !user.lastnameIsValid()) {
-      return "Invalid field lastname. The lastname should contain only "
+      return "Invalid field lastname. The lastname must be capitalized, contain only "
           +"letters and optionally one second lastname.";
     }
     if (user.getPhoneNumber() != null && !user.phoneNumberIsValid()) {
