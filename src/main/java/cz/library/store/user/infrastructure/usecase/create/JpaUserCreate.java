@@ -1,10 +1,13 @@
 package cz.library.store.user.infrastructure.usecase.create;
 
+import org.springframework.stereotype.Component;
+
 import cz.library.store.user.application.usecase.create.UserCreateDataSourceGateway;
 import cz.library.store.user.domain.User;
 import cz.library.store.user.infrastructure.persistence.JpaUserRepository;
 import cz.library.store.user.infrastructure.persistence.UserDataMapper;
 
+@Component
 public class JpaUserCreate implements UserCreateDataSourceGateway {
 
   private final JpaUserRepository repository;
