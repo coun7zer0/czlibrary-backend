@@ -23,7 +23,7 @@ public class UserCreateInteractor implements UserCreateBoundary {
   @Override
   public UserResponseData create(final UserRequestData data) {
     if (data == null) {
-      return userPresenter.prepareFailView("Missing data");
+      return userPresenter.prepareFailView("Required request body is missing");
     }
 
     User user = data.toUser();

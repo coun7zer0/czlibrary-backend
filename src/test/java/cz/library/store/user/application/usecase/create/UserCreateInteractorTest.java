@@ -69,7 +69,7 @@ public class UserCreateInteractorTest {
     // then
     verify(userValidation, times(0)).validate(any(User.class));
     verify(userDataSource, times(0)).save(any(User.class));
-    verify(userPreseter, times(1)).prepareFailView("Missing data");
+    verify(userPreseter, times(1)).prepareFailView("Required request body is missing");
   }
 
   @Test
