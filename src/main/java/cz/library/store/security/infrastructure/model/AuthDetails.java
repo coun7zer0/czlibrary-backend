@@ -8,12 +8,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import cz.library.store.user.domain.User;
 
-public class UserAuth implements UserDetails {
+public class AuthDetails implements UserDetails {
 
   private final User user;
   private final Function<User, String> usernameGetter;
 
-  public UserAuth(User user, Function<User, String> usernameGetter) {
+  public AuthDetails(User user, Function<User, String> usernameGetter) {
     this.user = user;
     this.usernameGetter = usernameGetter;
   }

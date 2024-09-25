@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import cz.library.store.security.application.dto.AuthData;
 import cz.library.store.security.application.usecase.auth.AuthBoundary;
-import cz.library.store.security.infrastructure.model.UserAuth;
+import cz.library.store.security.infrastructure.model.AuthDetails;
 
 @Service
 public class AuthService implements UserDetailsService {
@@ -21,7 +21,7 @@ public class AuthService implements UserDetailsService {
   @Override
   public UserDetails loadUserByUsername(String identifier) throws UsernameNotFoundException {
     AuthData data = interactor.auth(identifier);
-    return new UserAuth(data.user(), data.usernameGetter());
+    return new AuthDetails(data.user(), data.usernameGetter());
   }
 
 }

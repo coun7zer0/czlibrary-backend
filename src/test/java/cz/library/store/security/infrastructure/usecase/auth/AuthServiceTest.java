@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import cz.library.store.security.application.dto.AuthData;
 import cz.library.store.security.application.usecase.auth.AuthInteractor;
-import cz.library.store.security.infrastructure.model.UserAuth;
+import cz.library.store.security.infrastructure.model.AuthDetails;
 import cz.library.store.user.domain.User;
 
 public class AuthServiceTest {
@@ -39,7 +39,7 @@ public class AuthServiceTest {
     user.setEmail(email);
     Function<User, String> usernameGetter = User::getEmail;
 
-    UserDetails expected = new UserAuth(user, usernameGetter);
+    UserDetails expected = new AuthDetails(user, usernameGetter);
 
     when(interactor.auth(email)).thenReturn(new AuthData(user, usernameGetter));
 
