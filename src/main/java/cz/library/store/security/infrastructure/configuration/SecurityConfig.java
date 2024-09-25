@@ -1,4 +1,4 @@
-package cz.library.store.security.infrastructure;
+package cz.library.store.security.infrastructure.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +23,7 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             authorize -> authorize
                 .requestMatchers("/login").permitAll()
+                .requestMatchers("/api/v1/users").permitAll()
                 .anyRequest().denyAll());
 
     return http.build();
