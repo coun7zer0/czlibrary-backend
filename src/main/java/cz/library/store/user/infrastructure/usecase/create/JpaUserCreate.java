@@ -1,5 +1,6 @@
 package cz.library.store.user.infrastructure.usecase.create;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import cz.library.store.user.application.usecase.create.UserCreateDataSourceGateway;
@@ -18,6 +19,8 @@ public class JpaUserCreate implements UserCreateDataSourceGateway {
 
   @Override
   public User save(User user) {
+    String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+    user.setPassword(encodedPassword);
     return repository.save(new UserDataMapper(user)).toUser();
   }
 
