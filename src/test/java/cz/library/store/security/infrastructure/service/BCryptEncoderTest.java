@@ -1,4 +1,4 @@
-package cz.library.store.security.infrastructure.service.encoder;
+package cz.library.store.security.infrastructure.service;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

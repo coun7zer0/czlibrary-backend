@@ -1,4 +1,4 @@
-package cz.library.store.security.infrastructure.service.jwt;
+package cz.library.store.security.infrastructure.service;
 
 import java.nio.charset.StandardCharsets;
 import java.sql.Date;

@@ -1,4 +1,4 @@
-package cz.library.store.security.infrastructure.service.encoder;
+package cz.library.store.security.infrastructure.service;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
