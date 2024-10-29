@@ -29,6 +29,7 @@ class RemoveModelAndEntitiesFilter implements TypeFilter {
     return !className.contains("dto")
         && !className.contains("validation")
         && !className.contains("infrastructure")
+        && !className.contains("service")
         && !className.contains("domain");
   }
 }
