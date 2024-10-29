@@ -42,6 +42,12 @@ public abstract class ValidatorBuilder<T, U extends ValidatorBuilder<T, U>> {
     return self();
   }
 
+  public <R> U fieldExists(
+      String fieldName, Function<T, R> fieldGetter, Predicate<R> fieldExistsBy) {
+    validatorChain.add(new FieldExists<>(fieldName, fieldGetter, fieldExistsBy));
+    return self();
+  }
+
   public Validator<T> build (){
     return Validator.link(validatorChain);
   }
