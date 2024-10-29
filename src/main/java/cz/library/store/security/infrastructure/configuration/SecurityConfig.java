@@ -3,7 +3,6 @@ package cz.library.store.security.infrastructure.configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -22,7 +21,6 @@ import cz.library.store.security.infrastructure.service.JwtService;
 
 @EnableWebSecurity
 @Configuration
-@Profile("!test")
 public class SecurityConfig {
 
   @Value("${api.security.secret}")
@@ -44,7 +42,6 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             authorize -> authorize
                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
-                .requestMatchers("/api/v1/users").permitAll()
                 .anyRequest().authenticated())
         .addFilterBefore(
             new JwtAuthenticationFilter(TokenProvider(), jwtDataSource),
