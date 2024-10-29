@@ -15,5 +15,5 @@ server:
         include-stacktrace: never
 
 logging:
-  level:
-    org.springframework.security.web: DEBUG
+    level:
+        org.springframework.security.web: DEBUG

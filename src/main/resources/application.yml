@@ -2,3 +2,6 @@ spring:
     profiles:
         active: dev
         # active: dev, test, prod
+api:
+    security:
+        secret: ${JWT_SECRET}
