@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import cz.library.store.security.application.service.PasswordEncoder;
+import cz.library.store.security.infrastructure.service.BCryptEncoder;
 import cz.library.store.user.domain.User;
 import cz.library.store.user.infrastructure.persistence.JpaUserRepository;
 import cz.library.store.user.infrastructure.persistence.UserDataMapper;
@@ -25,7 +27,8 @@ public class JpaUserCreateTest {
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
-    userDataSource = new JpaUserCreate(userRepository);
+    PasswordEncoder passwordEncoder = new BCryptEncoder();
+    userDataSource = new JpaUserCreate(userRepository, passwordEncoder);
   }
 
   @Test
