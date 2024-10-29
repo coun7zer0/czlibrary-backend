@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.booleanThat;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -16,7 +15,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import cz.library.store.user.application.dto.UserResponseData;
 import cz.library.store.user.domain.User;
 import cz.library.store.user.infrastructure.persistence.JpaUserRepository;
 import cz.library.store.user.infrastructure.persistence.UserDataMapper;

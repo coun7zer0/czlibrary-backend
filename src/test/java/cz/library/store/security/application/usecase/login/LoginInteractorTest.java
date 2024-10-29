@@ -97,4 +97,5 @@ public class LoginInteractorTest {
     verify(loginPresenter, times(0)).prepareSuccessView(any(TokenResponseData.class));
     verify(tokenProvider, times(0)).generateToken(any(User.class), anyString());
   }
+
 }
